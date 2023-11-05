@@ -11,4 +11,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 
 add_library(TestUtilitiesInterface INTERFACE)
-target_include_directories(TestUtilitiesInterface INTERFACE TestUtilitiesInterface/)
+target_include_directories(TestUtilitiesInterface INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/TestUtilitiesInterface>" 
+	"$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
